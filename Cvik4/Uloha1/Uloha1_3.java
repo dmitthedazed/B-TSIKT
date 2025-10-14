@@ -1,4 +1,4 @@
-package Cvik5.Uloha1;
+package Cvik4.Uloha1;
 //Porovnanie reťazcov (Сравнение строк)
 import java.util.Scanner;
 

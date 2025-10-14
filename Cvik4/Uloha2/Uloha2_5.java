@@ -1,5 +1,5 @@
-package Cvik5.Uloha2;
-
+package Cvik4.Uloha2;
+// Palidrom
 import java.util.Scanner;
 
 public class Uloha2_5 {

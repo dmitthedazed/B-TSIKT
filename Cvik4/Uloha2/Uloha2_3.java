@@ -1,4 +1,4 @@
-package Cvik5.Uloha2;
+package Cvik4.Uloha2;
 //RozdelenieRetazca (Разделение строки на слова)
 
 import java.util.Scanner;

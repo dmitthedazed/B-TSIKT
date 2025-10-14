@@ -1,4 +1,4 @@
-package Cvik5.Uloha3;
+package Cvik4.Uloha3;
 
 import java.util.Scanner;
 
@@ -49,7 +49,7 @@ public class Uloha3 {
                 System.out.print("Zadaj vek: ");
                 int age = sc.nextInt();
 
-                System.out.print("Zadaj plat: ");
+                System.out.print("Zadaj plat (v €): ");
                 double salary = sc.nextDouble();
                 sc.nextLine(); // очистка буфера
 

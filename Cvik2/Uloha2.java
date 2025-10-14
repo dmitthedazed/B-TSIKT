@@ -1,7 +1,9 @@
-public class Uloha2_cvik2 {
+package Cvik2;
+
+public class Uloha2 {
 
 	public static void demonstrateControlFlow(int number) {
-		// Проверяем знак числа и выводим соответствующее сообщение
+        // Проверяем знак числа и выводим соответствующее сообщение
 		if (number == 0) {
 			System.out.println("Číslo je nula.");
 			return;
@@ -14,8 +16,8 @@ public class Uloha2_cvik2 {
 		int absolute = Math.abs(number);
 		int digitCount = 0;
 		int temp = absolute;
-		// Подсчитываем количество цифр в модуле числа с помощью цикла while
-		while (temp > 0) {
+        // Подсчитываем количество цифр в модуле числа с помощью цикла while
+    	while (temp > 0) {
 			temp /= 10;
 			digitCount++;
 		}

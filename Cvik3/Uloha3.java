@@ -1,6 +1,7 @@
+package Cvik3;
 import java.text.DecimalFormat;
 
-public class Uloha3_cvik3 {
+public class Uloha3 {
 	private static final DecimalFormat FORMAT = new DecimalFormat("0.##########");
 
 	public static void calculator(double first, double second) {

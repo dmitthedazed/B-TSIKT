@@ -1,4 +1,4 @@
-package Cvik5.Uloha1;
+package Cvik4.Uloha1;
 //Dĺžka reťazca (Длина строки)
 import java.util.Scanner;
 

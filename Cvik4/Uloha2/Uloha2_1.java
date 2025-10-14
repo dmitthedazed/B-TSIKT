@@ -1,4 +1,4 @@
-package Cvik5.Uloha2;
+package Cvik4.Uloha2;
 
 import java.util.Scanner;
 

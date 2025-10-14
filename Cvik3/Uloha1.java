@@ -1,4 +1,5 @@
-public class Uloha1_cvik3 {
+package Cvik3;
+public class Uloha1 {
 
 	public static void primeNumber(int number) {
 		if (number <= 1) {

@@ -1,4 +1,5 @@
-public class Uloha2_cvik3 {
+package Cvik3;
+public class Uloha2 {
 
 	public static void sumAll(int number) {
 		if (number <= 0) {
