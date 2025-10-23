@@ -30,38 +30,39 @@ class Employee {
 // Главный класс с меню
 public class Uloha3 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Employee emp = null;
+        try (Scanner sc = new Scanner(System.in)) {
+            Employee emp = null;
 
-        while (true) {
-            System.out.println("\nMENU");
-            System.out.println("1. Vytvoriť zamestnanca");
-            System.out.println("2. Zobraziť informácie");
-            System.out.print("Vyberte možnosť: ");
+            while (true) {
+                System.out.println("\nMENU");
+                System.out.println("1. Vytvoriť zamestnanca");
+                System.out.println("2. Zobraziť informácie");
+                System.out.print("Vyberte možnosť: ");
 
-            int choice = sc.nextInt();
-            sc.nextLine(); // очистка буфера
-
-            if (choice == 1) {
-                System.out.print("Zadaj meno: ");
-                String name = sc.nextLine();
-
-                System.out.print("Zadaj vek: ");
-                int age = sc.nextInt();
-
-                System.out.print("Zadaj plat (v €): ");
-                double salary = sc.nextDouble();
+                int choice = sc.nextInt();
                 sc.nextLine(); // очистка буфера
 
-                System.out.print("Zadaj pozíciu: ");
-                String position = sc.nextLine();
+                if (choice == 1) {
+                    System.out.print("Zadaj meno: ");
+                    String name = sc.nextLine();
 
-                emp = new Employee(name, age, salary, position);
-                System.out.println("Zamestnanec bol úspešne vytvorený!");
-            }
+                    System.out.print("Zadaj vek: ");
+                    int age = sc.nextInt();
 
-            if (choice == 2 && emp != null) {
-                emp.printInfo();
+                    System.out.print("Zadaj plat (v €): ");
+                    double salary = sc.nextDouble();
+                    sc.nextLine(); // очистка буфера
+
+                    System.out.print("Zadaj pozíciu: ");
+                    String position = sc.nextLine();
+
+                    emp = new Employee(name, age, salary, position);
+                    System.out.println("Zamestnanec bol úspešne vytvorený!");
+                }
+
+                if (choice == 2 && emp != null) {
+                    emp.printInfo();
+                }
             }
         }
     }

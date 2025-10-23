@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class Uloha2_2 {
      public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Zadaj text: ");
-        String text = sc.nextLine();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Zadaj text: ");
+            String text = sc.nextLine();
 
-        String bezMedzier = text.replace(" ", "");
+            String bezMedzier = text.replace(" ", "");
 
-        System.out.println("Bez medzier: " + bezMedzier);
+            System.out.println("Bez medzier: " + bezMedzier);
+        }
     }
 }
