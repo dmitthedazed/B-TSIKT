@@ -9,6 +9,6 @@ public class Circle extends Shape {
 
     @Override
     public double getArea() {
-        return Math.PI * radius * radius; // Площа кола: πr²
+        return Math.PI * radius * radius; // πr² 
     }
 }

@@ -12,7 +12,7 @@ public class Rectangle extends Shape {
 
     @Override
     public double getArea() {
-        return width * height; // Площа прямокутника: ширина * висота
+        return width * height; // šírka * výška
     }
 }
 

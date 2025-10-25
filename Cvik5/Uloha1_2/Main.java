@@ -10,18 +10,18 @@ public class Main {
 
         while (true) {
             System.out.println("Menu:");
-            System.out.println("1. Pridať zviera");
-            System.out.println("2. Zobraziť všetky zvieratá");
-            System.out.println("3. Prehrať zvuk zvieraťa");
-            System.out.println("4. Odstrániť zviera");
-            System.out.println("5. Ukončiť");
-            System.out.print("Vyberte možnosť: ");
+            System.out.println("1. Pridat zviera");
+            System.out.println("2. Zobrazit vsetky zvierata");
+            System.out.println("3. Prehrat zvuk zvierata");
+            System.out.println("4. Odstranit zviera");
+            System.out.println("5. Ukoncit");
+            System.out.print("Vyberte moznost: ");
 
             int choice = -1;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Neplatný vstup. Zadajte číslo.");
+                System.out.println("Neplatny vstup. Zadajte cislo.");
                 continue;
             }
 
@@ -43,39 +43,45 @@ public class Main {
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Neplatná voľba. Skúste to znova.");
+                    System.out.println("Neplatna volba. Skuste to znova.");
             }
         }
     }
 
     private static void addAnimal(Scanner scanner, ArrayList<Animal> animals) {
         System.out.println("--------------------");
-        System.out.print("Aké zviera chcete pridať? (pes/mačka): ");
-        String animalType = scanner.nextLine();
+        
+        String animalType;
+        while (true) {
+            System.out.print("Ake zviera chcete pridat? (pes/macka): ");
+            animalType = scanner.nextLine();
 
-        if (!animalType.equalsIgnoreCase("pes") && !animalType.equalsIgnoreCase("macka")) {
-            System.out.println("Len pes alebo mačka.");
-            return;
+            if (animalType.equalsIgnoreCase("pes") || animalType.equalsIgnoreCase("macka")) {
+                break;
+            }
+            System.out.println("Len pes alebo macka. Skuste znova.");
         }
 
-        System.out.print("Zadajte meno zvieraťa: ");
+        System.out.print("Zadajte meno zvierata: ");
         String name = scanner.nextLine();
 
-        System.out.print("Zadajte vek zvieraťa: ");
         int age;
-        try {
-            age = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Neplatný vek. Zviera nebolo pridané.");
-            return;
+        while (true) {
+            System.out.print("Zadajte vek zvierata: ");
+            try {
+                age = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Neplatny vek. Zadajte cislo.");
+            }
         }
 
         if (animalType.equalsIgnoreCase("pes")) {
             animals.add(new Dog(name, age));
-            System.out.println("Pes pridaný.");
+            System.out.println("Pes pridany.");
         } else {
             animals.add(new Cat(name, age));
-            System.out.println("Mačka pridaná.");
+            System.out.println("Macka pridana.");
         }
     }
 
@@ -83,7 +89,7 @@ public class Main {
         System.out.println("--------------------");
         System.out.println("Zoznam zvierat:");
         if (animals.isEmpty()) {
-            System.out.println("Zoznam je prázdny.");
+            System.out.println("Zoznam je prazdny.");
         } else {
             for (int i = 0; i < animals.size(); i++) {
                 System.out.println((i + 1) + ". " + animals.get(i).displayInfo());
@@ -94,52 +100,58 @@ public class Main {
     private static void playAnimalSound(Scanner scanner, ArrayList<Animal> animals) {
         System.out.println("--------------------");
         if (animals.isEmpty()) {
-            System.out.println("Niet žiadne zvieratá. Pridajte najprv zviera.");
+            System.out.println("Niet ziadne zvierata. Pridajte najprv zviera.");
             return;
         }
 
         viewAnimals(animals);
-        System.out.print("Zadajte číslo zvieraťa, ktorého zvuk chcete prehrať: ");
         
         int index;
-        try {
-            index = Integer.parseInt(scanner.nextLine()) - 1;
-        } catch (NumberFormatException e) {
-            System.out.println("Neplatný vstup. Zadajte číslo.");
-            return;
+        while (true) {
+            System.out.print("Zadajte cislo zvierata, ktoreho zvuk chcete prehrat: ");
+            try {
+                index = Integer.parseInt(scanner.nextLine()) - 1;
+                
+                if (index >= 0 && index < animals.size()) {
+                    break;
+                } else {
+                    System.out.println("Neplatne cislo. Skuste znova.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Neplatny vstup. Zadajte cislo.");
+            }
         }
 
-        if (index >= 0 && index < animals.size()) {
-            Animal animal = animals.get(index);
-            System.out.println(animal.getName() + " vydáva zvuk: " + animal.makeSound());
-        } else {
-            System.out.println("Neplatné číslo. Zviera nenájdené.");
-        }
+        Animal animal = animals.get(index);
+        System.out.println(animal.getName() + " vydava zvuk: " + animal.makeSound());
     }
 
     private static void deleteAnimal(Scanner scanner, ArrayList<Animal> animals) {
         System.out.println("--------------------");
         if (animals.isEmpty()) {
-            System.out.println("Niet čo odstrániť, zoznam je prázdny.");
+            System.out.println("Niet co odstranit, zoznam je prazdny.");
             return;
         }
 
         viewAnimals(animals);
-        System.out.print("Zadajte číslo zvieraťa, ktoré chcete odstrániť: ");
         
         int indexToRemove;
-        try {
-            indexToRemove = Integer.parseInt(scanner.nextLine()) - 1;
-        } catch (NumberFormatException e) {
-            System.out.println("Neplatný vstup. Zadajte číslo.");
-            return;
+        while (true) {
+            System.out.print("Zadajte cislo zvierata, ktore chcete odstranit: ");
+            try {
+                indexToRemove = Integer.parseInt(scanner.nextLine()) - 1;
+                
+                if (indexToRemove >= 0 && indexToRemove < animals.size()) {
+                    break;
+                } else {
+                    System.out.println("Neplatne cislo. Skuste znova.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Neplatny vstup. Zadajte cislo.");
+            }
         }
 
-        if (indexToRemove >= 0 && indexToRemove < animals.size()) {
-            Animal removedAnimal = animals.remove(indexToRemove);
-            System.out.println("Zviera '" + removedAnimal.getName() + "' bolo odstránené.");
-        } else {
-            System.out.println("Neplatné číslo. Zviera nebolo odstránené.");
-        }
+        Animal removedAnimal = animals.remove(indexToRemove);
+        System.out.println("Zviera '" + removedAnimal.getName() + "' bolo odstranene.");
     }
 }
