@@ -3,8 +3,7 @@ package Cvik6.Uloha4;
 public class ElektrickeAuto implements DopravneProstriedok {
     private String model;
 
-    // Конструктор
-    public ElektrickeAuto(String model) {
+    public ElektrickeAuto(String model, TypPaliva elektrika) {
         this.model = model;
     }
 

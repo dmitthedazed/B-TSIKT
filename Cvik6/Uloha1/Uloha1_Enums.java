@@ -5,8 +5,8 @@ import java.util.Scanner;
 enum Season {
     Zima, Jar, Leto, Jesen;
 
-    
-    // Метод для получения сезона по месяцу
+
+    // получаем сезон по месяцу
     public static Season getSeason(int month) {
         switch (month) {
             case 12:
@@ -35,11 +35,9 @@ public class Uloha1_Enums {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Запрос у пользователя номера месяца
         System.out.print("Zadajte cislo mesiaca (1-12): ");
         int month = scanner.nextInt();
         
-        // Получение сезона
         try {
             Season season = Season.getSeason(month);
             System.out.println("Rocne obdobie: " + season);
