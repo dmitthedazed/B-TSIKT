@@ -1,0 +1,92 @@
+### 1. Регистрация пользователя
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "student_test",
+  "password": "password123",
+  "email": "test@example.com"
+}
+
+### 2. Логин (получение Cookie)
+# @name login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "student_test",
+  "password": "password123"
+}
+
+### 3. Проверка доступа (Кто я?)
+GET http://localhost:8080/api/auth/me
+# VS Code REST Client автоматически подставит куки из предыдущего запроса,
+# но если нет - убедись, что расширение поддерживает cookies jar.
+
+### 4. Создать группу
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "Java Study Group",
+  "description": "Learning Spring Boot together"
+}
+
+### 5. Получить список групп
+GET http://localhost:8080/api/groups
+
+### 6. Добавить участника (нужен ID другого юзера, создай его сначала)
+# Сначала создай второго юзера через регистрацию, посмотри его ID в базе или через GET /api/users
+# Допустим, ID второго юзера = 2
+POST http://localhost:8080/api/groups/1/members
+Content-Type: application/json
+
+{
+  "userId": 2
+}
+
+### 7. Создать задачу в группе (ID=1)
+POST http://localhost:8080/api/groups/1/tasks
+Content-Type: application/json
+
+{
+  "title": "Complete Chapter 1",
+  "description": "Read pages 1-50 and solve exercises",
+  "deadline": "2025-12-01T12:00:00"
+}
+
+### 8. Получить задачи группы
+GET http://localhost:8080/api/groups/1/tasks
+
+### 9. Обновить статус задачи (ID=1)
+PUT http://localhost:8080/api/tasks/1/status
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+### 10. Загрузить файл (Пример для REST Client)
+# В VS Code REST Client загрузка файлов работает специфично.
+# Лучше используй Postman для этого теста.
+# Но вот пример синтаксиса:
+# POST http://localhost:8080/api/groups/1/resources
+# Content-Type: multipart/form-data; boundary=boundary
+# 
+# --boundary
+# Content-Disposition: form-data; name="file"; filename="test.txt"
+# 
+# Hello World content inside file
+# --boundary--
+
+### 11. Получить список файлов группы
+GET http://localhost:8080/api/groups/1/resources
+
+### 12. Скачать файл (ID=1)
+GET http://localhost:8080/api/resources/1/download
+
+### 13. Получить статистику группы (Задачи + Логи)
+GET http://localhost:8080/api/stats/groups/1
+
+### 14. Получить активность пользователя (ID=1)
+GET http://localhost:8080/api/stats/users/1

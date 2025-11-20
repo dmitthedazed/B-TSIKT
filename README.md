@@ -44,3 +44,18 @@ javac -d bin "Cvik4/Uloha3/Uloha3.java"
 java -cp bin Cvik4.Uloha3.Uloha3
 ```
 
+## Semestralne zadanie
+
+V priecinku `Semestralne_Zadanie` je pripraven� priestor na semestr�lny projekt. Kompletn� zadanie je rozp�san� v dvoch README variantoch:
+
+- [Slovensky](Semestralne_Zadanie/Semestralne_Zadanie_SK.md)
+- [English](Semestralne_Zadanie/Semestralne_Zadanie_EN.md)
+
+Hlavn� body zadania:
+
+- vyber si mal�, ale ucelen� projekt (konzola alebo jednoduch� UI), v ktorom vie� vyu�i� kolekcie, pr�cu so s�bormi a objektovo orientovan� n�vrh,
+- minim�lne tri vlastn� triedy, pr�ca s kolekciou a jednoduch� valid�cia/chybov� hl�senia,
+- README k projektu mus� pop�sa� dom�nu, funkcionality, sp�sob spustenia aj pl�n roz�iren�,
+- zdrojov� k�d a pr�padn� d�ta patria do priecinku `Semestralne_Zadanie`, ka�d� logick� krok verzuj samostatn�m commitom,
+- prilo� manu�lne alebo automatizovan� testy, ktor� uk�u hlavn� scen�re.
+
