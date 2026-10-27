@@ -1,61 +1,70 @@
+<div align="center">
+
 # B-TSIKT
 
-Praktické cvičenia k predmetu (predpoklad) TSIKT – základné Java úlohy rozdelené podľa týždňov / cvičení. Repozitár obsahuje jednoduché príklady na zoznámenie sa so syntaxou Javy: výpisy na konzolu, cykly, podmienky, práca s metódami a postupné zvyšovanie zložitosti.
+Weekly Java exercises for the course *Tvorba softvéru v IKT*, from console output to a small SQLite app.
 
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)
+[![Tests](https://github.com/dmitthedazed/B-TSIKT/actions/workflows/tests.yml/badge.svg)](https://github.com/dmitthedazed/B-TSIKT/actions/workflows/tests.yml)
 
-## VS Code – rýchly štart
+</div>
 
-Tento workspace je pripravený na prácu s Javou vo VS Code:
+## Contents
 
-- Odporúčané rozšírenia sú v `.vscode/extensions.json` (Extension Pack for Java atď.).
-- JDK 21 je nastavené v `.vscode/settings.json`.
-- Debug konfigurácia „Java: Launch Current File“ je v `.vscode/launch.json`.
+- `Cvik1`–`Cvik9`: one folder per class, numbered tasks inside.
+- `lib/`: `sqlite-jdbc` driver for the database exercises.
+- Semester project: [B-TSIKT_Semestralne-Zadanie](https://github.com/dmitthedazed/B-TSIKT_Semestralne-Zadanie).
 
-### Spustenie aktuálne otvoreného súboru
+## Assignments
 
-1) Otvorte `.java` súbor s metódou `public static void main`.
-2) Stlačte F5 (alebo Run and Debug → Java: Launch Current File).
+| Class | Task | Topic | Source |
+| --- | --- | --- | --- |
+| 1 | 1 | Hello World | [Uloha1_HelloWorld.java](Cvik1/Uloha1_HelloWorld.java) |
+| 1 | 2 | Loop from 1 to 100 | [Uloha2_Loop_1to100.java](Cvik1/Uloha2_Loop_1to100.java) |
+| 2 | 2 | Control flow: sign and zero checks | [Uloha2.java](Cvik2/Uloha2.java) |
+| 3 | 1 | Prime number check | [Uloha1.java](Cvik3/Uloha1.java) |
+| 3 | 2 | Sum of numbers | [Uloha2.java](Cvik3/Uloha2.java) |
+| 3 | 3 | Four-operation calculator | [Uloha3.java](Cvik3/Uloha3.java) |
+| 4 | 1 | String operations (length, compare, search, case) | [Uloha1/](Cvik4/Uloha1/) |
+| 4 | 2 | String operations (remove spaces, split, replace, palindrome) | [Uloha2/](Cvik4/Uloha2/) |
+| 4 | 3 | Employee class | [Uloha3.java](Cvik4/Uloha3/Uloha3.java) |
+| 5 | 1, 2 | Inheritance: Animal, Cat, Dog | [Uloha1_2/](Cvik5/Uloha1_2/) |
+| 5 | 3 | Abstract Shape, Circle, Rectangle | [Uloha3/](Cvik5/Uloha3/) |
+| 6 | 1 | Enums: seasons by month | [Uloha1/](Cvik6/Uloha1/Uloha1_Enums.java) |
+| 6 | 1, 2 (example) | Interface Vehicle | [Uloha1_2_Priklad.java](Cvik6/Uloha1_2_Priklad.java) |
+| 6 | 3 | Inheritance: Animal, Bird, Cat, Dog | [Uloha3/](Cvik6/Uloha3/) |
+| 6 | 4 | Vehicles, electric car, fuel type enum | [Uloha4/](Cvik6/Uloha4/) |
+| 7 | 1 | Objects: Zamestnanec | [Uloha1/](Cvik7/Uloha1/) |
+| 7 | 2 | Customer management | [Uloha2/](Cvik7/Uloha2/) |
+| 7 | 3 | Dictionary with HashMap | [Uloha3/](Cvik7/Uloha3/) |
+| 8 | 1 | Division with exception handling | [Uloha1.java](Cvik8/Uloha1.java) |
+| 8 | 2 | Reading an integer from input | [Uloha2.java](Cvik8/Uloha2.java) |
+| 8 | 3 | Custom exception for age check | [Uloha3.java](Cvik8/Uloha3.java) |
+| 8 | 4 | Temperature conversion class | [Uloha4.java](Cvik8/Uloha4.java) |
+| 9 | 1 | SQLite database: table, students | [Uloha1.java](Cvik9/Uloha1.java) |
 
-### Build/Run cez Tasks
+## Running
 
-- Build aktuálneho súboru do priečinka `bin`:
+In VS Code, open a `.java` file with `main` and press F5.
 
-```powershell
-Tasks: Run Task → "javac: compile current file to bin"
-```
+In a terminal (example: `Cvik4/Uloha3/Uloha3.java`):
 
-- Spustiť aktuálny súbor (zohľadní balíček podľa cesty):
-
-```powershell
-Tasks: Run Task → "java: run current file from bin"
-```
-
-### Ručné spustenie v termináli (Windows PowerShell)
-
-```powershell
-javac -d bin "<cesta k súboru>.java"
-java -cp bin <balicek>.<<NazovTriedy>>
-```
-
-Príklad pre `Cvik4/Uloha3/Uloha3.java`:
-
-```powershell
+```bash
 javac -d bin "Cvik4/Uloha3/Uloha3.java"
 java -cp bin Cvik4.Uloha3.Uloha3
 ```
 
-## Semestralne zadanie
+Database exercises need the driver on the classpath:
 
-V priecinku `Semestralne_Zadanie` je pripraven� priestor na semestr�lny projekt. Kompletn� zadanie je rozp�san� v dvoch README variantoch:
+```bash
+javac -cp "lib/*" -d bin "Cvik9/Uloha1.java"
+java -cp "bin:lib/*" Cvik9.Uloha1
+```
 
-- [Slovensky](Semestralne_Zadanie/Semestralne_Zadanie_SK.md)
-- [English](Semestralne_Zadanie/Semestralne_Zadanie_EN.md)
+---
 
-Hlavn� body zadania:
+<div align="center">
 
-- vyber si mal�, ale ucelen� projekt (konzola alebo jednoduch� UI), v ktorom vie� vyu�i� kolekcie, pr�cu so s�bormi a objektovo orientovan� n�vrh,
-- minim�lne tri vlastn� triedy, pr�ca s kolekciou a jednoduch� valid�cia/chybov� hl�senia,
-- README k projektu mus� pop�sa� dom�nu, funkcionality, sp�sob spustenia aj pl�n roz�iren�,
-- zdrojov� k�d a pr�padn� d�ta patria do priecinku `Semestralne_Zadanie`, ka�d� logick� krok verzuj samostatn�m commitom,
-- prilo� manu�lne alebo automatizovan� testy, ktor� uk�u hlavn� scen�re.
+Licensed under the [MIT License](LICENSE).
 
+</div>

@@ -1,0 +1,27 @@
+# Compiled output
+*.class
+bin/
+out/
+target/
+
+# IDE: keep shared VS Code config, ignore the rest
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# Local databases created by running exercises
+*.db
+*.db-journal
+
+# Logs & temp
+*.log
+*.tmp
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
