@@ -65,6 +65,6 @@ java -cp "bin:lib/*" Cvik9.Uloha1
 
 <div align="center">
 
-Licensed under the [MIT License](LICENSE).
+Dmytrii Savin ([@dmitthedazed](https://github.com/dmitthedazed)). Licensed under the [MIT License](LICENSE).
 
 </div>
