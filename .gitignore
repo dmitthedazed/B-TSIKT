@@ -4,14 +4,10 @@ bin/
 out/
 target/
 
-# IDE: keep shared VS Code config, ignore the rest
+# IDE
 .idea/
+.vscode/
 *.iml
-.vscode/*
-!.vscode/settings.json
-!.vscode/launch.json
-!.vscode/tasks.json
-!.vscode/extensions.json
 
 # Local databases created by running exercises
 *.db
