@@ -4,10 +4,14 @@
 
 Weekly Java exercises for the course *Tvorba softvéru v IKT*, from console output to a small SQLite app.
 
-![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)
-[![Tests](https://github.com/dmitthedazed/B-TSIKT/actions/workflows/tests.yml/badge.svg)](https://github.com/dmitthedazed/B-TSIKT/actions/workflows/tests.yml)
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white&style=flat-square)
+[![Tests](https://img.shields.io/github/actions/workflow/status/dmitthedazed/B-TSIKT/tests.yml?style=flat-square&label=Tests)](https://github.com/dmitthedazed/B-TSIKT/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
 
 </div>
+
+> [!NOTE]
+> Archived. The course is over, so this repository is read-only and kept for reference.
 
 ## Contents
 
@@ -61,10 +65,6 @@ javac -cp "lib/*" -d bin "Cvik9/Uloha1.java"
 java -cp "bin:lib/*" Cvik9.Uloha1
 ```
 
----
+## License
 
-<div align="center">
-
-Dmytrii Savin ([@dmitthedazed](https://github.com/dmitthedazed)). Licensed under the [MIT License](LICENSE).
-
-</div>
+[MIT](LICENSE) © Dmytrii Savin
